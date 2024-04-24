@@ -4,8 +4,8 @@ import mongoose from "mongoose";
 import cors from "cors";
 import multer from "multer";
 import dotenv from "dotenv" ; 
-import morgan from "morgan";
-import helmet from "helmet";
+import morgan from "morgan";//
+import helmet from "helmet";//
 import Path from "path";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
@@ -51,7 +51,6 @@ app.post("/posts", verifyToken, upload.single("picture"), createPost);
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
-
 
 
 //mongoose setup .  
