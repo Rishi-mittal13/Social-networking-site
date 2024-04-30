@@ -3,3 +3,26 @@ npm i nodemon express jsonwebtoken mongoose morgan helmet multer multer-gridfs-s
 //frontend part .  
 npm i react-redux @reduxjs/toolkit redux-persist react-dropzone dotenv formik yup react-router-dom @mui/material @emotion/react 
 @emotion/styled @mui/icons-material /
+
+
+
+
+public class Solution {
+    public long minEnd(int count, int x) {
+        long res = x, cntt = 1;
+        while (cntt < count) {
+            long bitC = 0;
+            res = x;
+            for (int j = 0; j <= 63; j++) {
+                if ((res & (1L << j)) == 0) {
+                    if (((1L << bitC) & cntt) != 0) res += (1L << j);
+                    bitC++;
+                    if ((1L << bitC) > cntt) break;
+                }
+            }
+            cntt++;
+        }
+        return res;
+    }
+}
+
